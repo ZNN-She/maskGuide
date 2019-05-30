@@ -1,7 +1,7 @@
 {
   "name": "mask-guide",
-  "version": "1.0.0",
-  "description": "<img src=\"./img/1.png\" /> <img src=\"./img/2.png\" /> <img src=\"./img/3.png\" />",
+  "version": "1.0.1",
+  "description": "mask guide 遮罩引导",
   "main": "maskGuide.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
