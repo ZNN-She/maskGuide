@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遮罩引导</title>
+</head>
+<body>
+
+<div id="need-guide"
+     style="width: 300px; height: 100px; background: #ddd;">
+    需要引导的元素
+</div>
+<div id="need-guide2"
+     style="width: 100px; height: 50px; position: absolute; left: 300px; top: 150px;">
+    需要引导的元素2
+</div>
+<div id="need-guide3"
+     style="width: 100px; height: 50px; position: absolute; left: 500px; top: 150px;">
+    需要引导的元素2
+</div>
+
+<button onclick="startGuide()">开始引导</button>
+
+
+<script src="../maskGuide.js"></script>
+<script>
+
+    function startGuide() {
+        window.maskGuide("need-guide2", startGuide2)
+    }
+
+    function startGuide2(){
+        window.maskGuide("need-guide3", startGuide3)
+    }
+    function startGuide3(){
+        var ele = window.document.createElement("div");
+        var child1 = window.document.createElement("div");
+        child1.innerHTML = "option.explain";
+        var child2 = window.document.createElement("div");
+        child2.innerHTML = "option.explain";
+        var child3 = window.document.createElement("div");
+        child3.innerHTML = "option.explain";
+        ele.appendChild(child1);
+        ele.appendChild(child2);
+        ele.appendChild(child3);
+        window.maskGuide(
+            {
+                el:"need-guide",
+                explain:ele,
+                nextBtnText: "完成",
+                explainWidth: 500
+                /*width: 200,
+                height: 50,
+                left:0,
+                top:0*/
+            }
+        )
+    }
+</script>
+</body>
+</html>
