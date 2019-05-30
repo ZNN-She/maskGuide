@@ -18,3 +18,5 @@ closeBtnText | 跳过按钮的文字 | String | 跳过 | 否 |
 showNext | 是否现实下一步按钮 | Boolean | true | 否 |
 showClose | 是否现实跳过按钮 | Boolean | false | 否 |
 explain | 其他说明内容 | String或者Element | null | 否 |
+
+github：https://github.com/ZNN-She/maskGuide

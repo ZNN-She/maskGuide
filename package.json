@@ -1,0 +1,19 @@
+{
+  "name": "mask-guide",
+  "version": "1.0.0",
+  "description": "<img src=\"./img/1.png\" /> <img src=\"./img/2.png\" /> <img src=\"./img/3.png\" />",
+  "main": "maskGuide.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZNN-She/maskGuide.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZNN-She/maskGuide/issues"
+  },
+  "homepage": "https://github.com/ZNN-She/maskGuide#readme"
+}
