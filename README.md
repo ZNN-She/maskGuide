@@ -20,5 +20,5 @@ showClose | 是否现实跳过按钮 | Boolean | false | 否 |
 explain | 其他说明内容 | String或者Element | null | 否 |
 
 github：https://github.com/ZNN-She/maskGuide
-演示地址：http://znnsnake.com:8090/mask-guide/
+演示地址：http://znnsnake.com:8090/demo/mask-guide/
 npm：https://www.npmjs.com/package/mask-guide
