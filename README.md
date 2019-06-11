@@ -11,6 +11,13 @@ window.maskGuide({
 });
 ```
 
+#####当传入回调的时候需要手动关闭遮罩
+```
+window.maskGuide("id", function(){
+   window.maskGuide.close(); 
+});
+```
+
 <img src="./img/1.png" />
 <img src="./img/2.png" />
 <img src="./img/3.png" />
@@ -31,6 +38,7 @@ closeBtnText | 跳过按钮的文字 | String | 跳过 | 否 |
 showNext | 是否现实下一步按钮 | Boolean | true | 否 |
 showClose | 是否现实跳过按钮 | Boolean | false | 否 |
 explain | 其他说明内容 | String或者Element | null | 否 |
+classWarp | 自定义class | String | null | 否 |
 
 github：https://github.com/ZNN-She/maskGuide
 演示地址：http://znnsnake.com/demo/mask-guide/

@@ -8,6 +8,7 @@
 
         var ele = window.document.createElement("div")
         ele.setAttribute("id", "maskGuide_mask");
+        ele.setAttribute("class", option.classWarp);
         ele.style.position = "fixed";
         ele.style.left = 0;
         ele.style.top = 0;
@@ -242,7 +243,8 @@
         closeBtnText: "跳过", // 关闭按钮的文字
         showNext: true, // 是否显示下一步按钮
         showClose: false, // 是否显示关闭按钮
-        explain: null // 其他说明 String或者Element
+        explain: null, // 其他说明 String或者Element
+        classWarp: "" // 自定义class
     };
 
     function maskGuide(options, nextCallback, closeCallBack) {
@@ -286,4 +288,5 @@
 
 
     window.maskGuide = maskGuide;
+    window.maskGuide.close = _clear;
 })(window);
