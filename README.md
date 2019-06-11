@@ -1,3 +1,16 @@
+```
+window.maskGuide("id", nextCallback, closeCallBack);
+```
+
+```
+window.maskGuide({
+    el:"need-guide",
+    explain:ele,
+    nextBtnText: "完成",
+    explainWidth: 500
+});
+```
+
 <img src="./img/1.png" />
 <img src="./img/2.png" />
 <img src="./img/3.png" />
