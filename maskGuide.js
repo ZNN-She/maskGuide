@@ -199,8 +199,8 @@
     // 局屏幕坐上角的位置
     function _getGuidePosition(option) {
 
-        var x = option.left || option.el.getBoundingClientRect().x;
-        var y = option.top || option.el.getBoundingClientRect().y;
+        var x = option.left || option.el.getBoundingClientRect().left;
+        var y = option.top || option.el.getBoundingClientRect().top;
 
         return {
             x: x,
