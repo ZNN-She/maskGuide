@@ -18,6 +18,7 @@ guide.init({
 
 #效果
 <img src="/img/1.png"  height="200"/>
+![avatar](./img/1.png)
 <img src="img/2.png"  height="200"/>
 
 #API
