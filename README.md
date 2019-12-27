@@ -17,8 +17,8 @@ guide.init({
 ```
 
 #效果
-<img src="./img/1.png"  height="200"/>
-<img src="./img/2.png"  height="200"/>
+<img src="/img/1.png"  height="200"/>
+<img src="img/2.png"  height="200"/>
 
 #API
 
