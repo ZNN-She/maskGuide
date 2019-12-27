@@ -5,57 +5,118 @@
     <title>遮罩引导</title>
 </head>
 <body>
+<div>
+    <div style="padding: 150px 300px;">
+        <p id="switch"><button onclick="switchType()">切换方式</button>:<span id="type-name">step</span></p>
+        <div>
+            <div id="topLeft" style="width: 100px; height: 60px;display: inline-block; margin-right: 20px;" onclick="guideInit(event, 'topLeft')">topLeft</div>
+            <div id="top" style="width: 100px; height: 60px;display: inline-block; margin-right: 20px;" onclick="guideInit(event, 'top')">top</div>
+            <div id="topRight" style="width: 100px; height: 60px;display: inline-block; margin-right: 20px;" onclick="guideInit(event, 'topRight')">topRight</div>
+        </div>
 
-<div id="need-guide"
-     style="width: 300px; height: 100px; background: #ddd;">
-    需要引导的元素
+        <div>
+            <div id="left" style="width: 100px; height: 60px;display: inline-block; margin-right: 20px;" onclick="guideInit(event, 'left')">left</div>
+            <div id="leftTop" style="width: 100px; height: 60px;display: inline-block; margin-right: 20px;" onclick="guideInit(event, 'leftTop')">leftTop</div>
+            <div id="leftBottom" style="width: 100px; height: 60px;display: inline-block; margin-right: 20px;" onclick="guideInit(event, 'leftBottom')">leftBottom</div>
+        </div>
+
+        <div>
+            <div id="bottom" style="width: 100px; height: 60px;display: inline-block; margin-right: 20px;" onclick="guideInit(event, 'bottom')">bottom</div>
+            <div id="bottomLeft" style="width: 100px; height: 60px;display: inline-block; margin-right: 20px;" onclick="guideInit(event, 'bottomLeft')">bottomLeft</div>
+            <div id="bottomRight" style="width: 100px; height: 60px;display: inline-block; margin-right: 20px;" onclick="guideInit(event, 'bottomRight')">bottomRight</div>
+        </div>
+
+        <div>
+            <div id="right" style="width: 100px; height: 60px;display: inline-block; margin-right: 20px;" onclick="guideInit(event, 'right')">right</div>
+            <div id="rightTop" style="width: 100px; height: 60px;display: inline-block; margin-right: 20px;" onclick="guideInit(event, 'rightTop')">rightTop</div>
+            <div id="rightBottom" style="width: 100px; height: 60px;display: inline-block; margin-right: 20px;" onclick="guideInit(event, 'rightBottom')">rightBottom</div>
+        </div>
+
+        <div>
+            <button onclick="continuous()">点击连续引导</button>
+        </div>
+    </div>
 </div>
-<div id="need-guide2"
-     style="width: 100px; height: 50px; position: absolute; left: 300px; top: 150px;">
-    需要引导的元素2
-</div>
-<div id="need-guide3"
-     style="width: 100px; height: 50px; position: absolute; left: 500px; top: 150px;">
-    需要引导的元素2
-</div>
 
-<button onclick="startGuide()">开始引导</button>
-
-
-<script src="../maskGuide.js"></script>
+<script src="../dist/dom/index.js"></script>
 <script>
-
-    function startGuide() {
-        window.maskGuide("need-guide2", startGuide2)
+    var type = "step";
+    function switchType() {
+        type = type === "step" ? "active" : "step";
+        document.getElementById("type-name").innerText = type;
     }
 
-    function startGuide2(){
-        window.maskGuide("need-guide3", startGuide3)
+    var config = {
+        explain: {
+            title: "标题",
+            content: "内容内容内容内容内容内容内容内容内容内容内容内容"
+        },
+        onClickClose: function () {
+            alert("点击了关闭");
+            window.guide.close();
+        },
+        onClickNext: function () {
+            alert("点击了下一步按钮");
+            window.guide.close();
+        },
+        onClickPrev: function () {
+            alert("点击了上一步");
+            window.guide.close();
+        },
+        onClickTarget: function () {
+            alert("点击元素");
+            window.guide.close();
+        }
+    };
+
+    function guideInit(e, position) {
+        var option = Object.assign({}, config, {
+            el: position,
+            type: type,
+            position: position
+        });
+        guide.init(option);
     }
-    function startGuide3(){
-        var ele = window.document.createElement("div");
-        var child1 = window.document.createElement("div");
-        child1.innerHTML = "option.explain";
-        var child2 = window.document.createElement("div");
-        child2.innerHTML = "option.explain";
-        var child3 = window.document.createElement("div");
-        child3.innerHTML = "option.explain";
-        ele.appendChild(child1);
-        ele.appendChild(child2);
-        ele.appendChild(child3);
-        window.maskGuide(
-            {
-                el:"need-guide",
-                explain:ele,
-                nextBtnText: "完成",
-                explainWidth: 500,
-                classWarp: "znn-class",
-                /*width: 200,
-                height: 50,
-                left:0,
-                top:0*/
+
+    var arr = ["top", "right", "bottom", "left"];
+    var index = 0;
+
+    function continuous() {
+        let item = arr[index];
+        var option = Object.assign({}, config, {
+            el: item,
+            type: type,
+            position: item,
+            onClickNext: function () {
+                if(index < arr.length - 1){
+                    index++;
+                    continuous()
+                }else {
+                    index=0;
+                    guide.close();
+                }
+            },
+            onClickPrev: function () {
+                if(index > 0){
+                    index--;
+                    continuous()
+                }else {
+                    index=0;
+                    guide.close();
+                }
+            },
+            onClickTarget: function () {
+                console.log(index);
+                if(index < arr.length - 2){
+                    index++;
+                    continuous()
+                }else {
+                    index=0;
+                    guide.close();
+                }
             }
-        )
+        });
+        guide.init(option);
     }
 </script>
 </body>

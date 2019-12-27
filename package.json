@@ -1,19 +1,48 @@
 {
-  "name": "mask-guide",
-  "version": "1.0.4",
-  "description": "mask guide 遮罩引导",
-  "main": "maskGuide.js",
+  "name": "servyou-mask-guide",
+  "version": "2.0.4",
+  "description": "mask guide 功能遮罩引导",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-dev": "gulp dev",
+    "build": "gulp prod"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ZNN-She/maskGuide.git"
+    "url": "https://github.com/ZNN-She/maskGuide"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ZNN-She/maskGuide/issues"
   },
-  "homepage": "https://github.com/ZNN-She/maskGuide#readme"
+  "homepage": "https://github.com/ZNN-She/maskGuide#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/runtime": "^7.7.4",
+    "@types/jquery": "^3.3.31",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.0",
+    "connect": "^3.7.0",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-if": "^3.0.0",
+    "gulp-remove-use-strict": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify-es": "^2.0.0",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  }
 }
