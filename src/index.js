@@ -2,12 +2,12 @@
  * Created by zhangnanning on 2019/12/3.
  *
  */
-import DEFAULT_CONFIG from "./script/config";
+import {DEFAULT_CONFIG} from "./script/config";
 import {clear} from "./script/util";
 import {activeGuide} from "./component/activeGuide";
 import {stepGuide} from "./component/stepGuide";
 
-const guide = (config) => {
+function guide(config) {
 
     // 清楚已存在的
     clear();
@@ -43,7 +43,10 @@ const guide = (config) => {
     return ele;
 };
 
-export default {
-    init: guide,
-    close: clear
+const close = clear;
+
+export {
+    guide,
+    close
 };
+

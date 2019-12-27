@@ -3,12 +3,32 @@
 
 #使用
 ```
-import guide from "../src";
+import {guide, close} from "mask-guide";
 
-guide.init({
+guide({
     el: "2",
     type: "step",
     position: "bottomRight",
+    onClickNext: () => {
+        console.log("点击了下一步");
+        close();
+    }
+    explain: {
+        title: "这是title",
+        content: "这是内容这是内容这是内容这是内容这是内容这是内容"
+    }
+});
+```
+```
+<script src="mode_moudules/mask-guide/dist/index.js"></script>
+maskGuide.guide({
+    el: "2",
+    type: "step",
+    position: "bottomRight",
+    onClickNext: () => {
+        console.log("点击了下一步");
+        maskGuide.close();
+    }
     explain: {
         title: "这是title",
         content: "这是内容这是内容这是内容这是内容这是内容这是内容"

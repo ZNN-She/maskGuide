@@ -1,10 +1,7 @@
 /**
  * Created by zhangnanning on 2019/12/4.
  */
-
-import {clearDom} from "./util";
-
-export default {
+export const DEFAULT_CONFIG ={
     el: null, // id或者Element 需要引导的元素
     type: "action", // action/step
     classWarp: null,

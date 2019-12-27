@@ -38,7 +38,7 @@
     </div>
 </div>
 
-<script src="../dist/dom/index.js"></script>
+<script src="../dist/index.js"></script>
 <script>
     var type = "step";
     function switchType() {
@@ -53,19 +53,19 @@
         },
         onClickClose: function () {
             alert("点击了关闭");
-            window.guide.close();
+            window.maskGuide.close();
         },
         onClickNext: function () {
             alert("点击了下一步按钮");
-            window.guide.close();
+            window.maskGuide.close();
         },
         onClickPrev: function () {
             alert("点击了上一步");
-            window.guide.close();
+            window.maskGuide.close();
         },
         onClickTarget: function () {
             alert("点击元素");
-            window.guide.close();
+            window.maskGuide.close();
         }
     };
 
@@ -75,7 +75,7 @@
             type: type,
             position: position
         });
-        guide.init(option);
+        maskGuide.guide(option);
     }
 
     var arr = ["top", "right", "bottom", "left"];
@@ -93,7 +93,7 @@
                     continuous()
                 }else {
                     index=0;
-                    guide.close();
+                    maskGuide.close();
                 }
             },
             onClickPrev: function () {
@@ -102,7 +102,7 @@
                     continuous()
                 }else {
                     index=0;
-                    guide.close();
+                    maskGuide.close();
                 }
             },
             onClickTarget: function () {
@@ -112,11 +112,11 @@
                     continuous()
                 }else {
                     index=0;
-                    guide.close();
+                    maskGuide.close();
                 }
             }
         });
-        guide.init(option);
+        maskGuide.guide(option);
     }
 </script>
 </body>
