@@ -1,6 +1,6 @@
 {
   "name": "mask-guide",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "mask guide 功能遮罩引导",
   "main": "dist/index.js",
   "scripts": {

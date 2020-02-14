@@ -19,6 +19,7 @@ export const DEFAULT_CONFIG ={
     showClose: true, // 是否显示关闭按钮
     showArrow: true, // 小三角
     showStar: true, // 星星
+    maskClosable: true, // 点击这招是否关闭
     explain: { // false不显示
         width: 340,
         title: "",

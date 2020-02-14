@@ -2,8 +2,19 @@
  * Created by zhangnanning on 2019/12/26.
  * 遮罩
  */
-import {resolveTargetSize, resolveTargetPosition} from "../../script/util";
+import {resolveTargetSize, resolveTargetPosition, clear} from "../../script/util";
 const MASK_RGBA = "rgba(0,0,0,0.5)";
+
+const onClick = (option, ele) => {
+    if(option.maskClosable){
+        ele.addEventListener("click", () => {
+            clear();
+            if(option.onClickClose){
+                option.onClickClose();
+            }
+        })
+    }
+};
 
 const createTopMask = (option) => {
     let size = resolveTargetSize(option);
@@ -21,6 +32,8 @@ const createTopMask = (option) => {
     for (let key in style){
         ele.style[key] = style[key];
     }
+
+    onClick(option, ele);
 
     return ele;
 };
@@ -42,6 +55,8 @@ const createRightMask = (option) => {
         ele.style[key] = style[key];
     }
 
+    onClick(option, ele);
+
     return ele;
 };
 
@@ -62,6 +77,8 @@ const createBottomMask = (option) => {
         ele.style[key] = style[key];
     }
 
+    onClick(option, ele);
+
     return ele;
 };
 
@@ -81,6 +98,8 @@ const createLeftMask = (option) => {
     for (let key in style){
         ele.style[key] = style[key];
     }
+
+    onClick(option, ele);
 
     return ele;
 };
