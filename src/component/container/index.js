@@ -35,6 +35,10 @@ function createContainer(option) {
         ele.style[key] = style[key];
     }
 
+    if(option.onClickContainer){
+        ele.addEventListener("click", option.onClickContainer)
+    }
+
     return ele;
 }
 

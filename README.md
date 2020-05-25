@@ -37,8 +37,8 @@ maskGuide.guide({
 ```
 
 #效果
-<img src="./img/1.png"  height="200"/>
-<img src="./img/2.png"  height="200"/>
+<img src="./img/1.mov"  height="300"/>
+<img src="./img/2.mov"  height="300"/>
 
 #API
 
@@ -50,8 +50,9 @@ type   | 引导类型 | String | step | 否 |
 classWarp |  | String | 无 | 否 | 
 position | 方向 | String | bottom | top/left/right/bottom/topLeft/topRight/bottomLeft/bottomRight/leftTop/leftBottom/rightTop/rightBottom | 
 targetPosition | 引导位置 | Object | 无 | 否 | {top: 100, left: 100}
-targetSize | 引导空白未知的大小 | Object | 无 | 否 | {width: 100, height: 100}
-onClickTarget | 点击target元素触发 | Function | 无 | 否 |
+targetSize | 引导空白未知的大小 | Object | 无 | 否 | {width: 100, height: 100} 
+onClickContainer | 点击容器的回调，点击任何地方都会触发 | Function | 无 | 否 |  
+onClickTarget | 点击target元素触发 | Function | 无 | 否 | 
 onClickNext | 点击下一步触发 | Function | 无 | 否 | 
 onClickPrev | 点击上一步触发 | Function | 无 | 否 | 
 onClickClose | 关闭触发 | Function | 无 | 否 | 
@@ -76,5 +77,5 @@ title |  | String/Element | 无 | 否 |
 content |  | String/Element | 无 | 否 | 
 
 #升级日志
-* 增加点击点击蒙层是否允许关闭控制
+* 增加点击容器的回调，点击任何地方都会触发
 

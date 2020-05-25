@@ -8,6 +8,7 @@ export const DEFAULT_CONFIG ={
     position: "bottomRight", //top left right bottom topLeft topRight bottomLeft bottomRight leftTop leftBottom rightTop rightBottom
     targetPosition: null, // {top, left} // 位置
     targetSize: null, // {width, height} // 大小
+    onClickContainer: null, // 点击容器的回调，点击任何地方都会触发
     onClickTarget: null, // 点击引导元素的回调
     onClickNext: null, // 点击下一步的回调
     onClickPrev: null, // 上一步
